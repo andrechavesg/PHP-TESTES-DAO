@@ -71,124 +71,79 @@ class Leilao
     {
         return $this->ultimoLanceDado()->getUsuario() != $usuario && $this->qtdDelancesDo($usuario) < 5;
     }
-    /**
-     * @return mixed
-     */
+    
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
     public function getNome()
     {
         return $this->nome;
     }
 
-    /**
-     * @return \br\com\caelum\leilao\dominio\float
-     */
     public function getValorInicial()
     {
         return $this->valorInicial;
     }
 
-    /**
-     * @return mixed
-     */
     public function getDono()
     {
         return $this->dono;
     }
 
-    /**
-     * @return mixed
-     */
     public function getDataAbertura() : DateTime
     {
         return $this->dataAbertura;
     }
 
-    /**
-     * @return mixed
-     */
     public function getUsado()
     {
         return $this->usado;
     }
 
-    /**
-     * @return boolean
-     */
     public function getEncerrado()
     {
         return $this->encerrado;
     }
 
-    /**
-     * @param mixed $id
-     */
     public function setId($id)
     {
         $this->id = $id;
     }
 
-    /**
-     * @param mixed $nome
-     */
     public function setNome($nome)
     {
         $this->nome = $nome;
     }
 
-    /**
-     * @param \br\com\caelum\leilao\dominio\float $valorInicial
-     */
     public function setValorInicial($valorInicial)
     {
         $this->valorInicial = $valorInicial;
     }
 
-    /**
-     * @param mixed $dono
-     */
     public function setDono($dono)
     {
         $this->dono = $dono;
     }
 
-    /**
-     * @param mixed $dataAbertura
-     */
     public function setDataAbertura(DateTime $dataAbertura)
     {
         $this->dataAbertura = $dataAbertura;
     }
 
-    /**
-     * @param mixed $usado
-     */
     public function setUsado($usado)
     {
         $this->usado = $usado;
     }
 
-    /**
-     * @param boolean $encerrado
-     */
     public function setEncerrado($encerrado)
     {
         $this->encerrado = $encerrado;
     }
 
-    /**
-     * @param mixed $lances
-     */
     public function setLances($lances)
     {
         $this->lances = $lances;
     }
 }
-	
