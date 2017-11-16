@@ -11,10 +11,12 @@ class Lance
     private $valor;
     private $leilao;
     
-    public function __construct(Usuario $usuario, float $valor)
+    public function __construct(Usuario $usuario, float $valor, Leilao $leilao)
     {
         $this->usuario = $usuario;
         $this->valor = $valor;
+        $this->data = new DateTime();
+        $this->leilao = $leilao;
     }
     
     public function getId(): int
