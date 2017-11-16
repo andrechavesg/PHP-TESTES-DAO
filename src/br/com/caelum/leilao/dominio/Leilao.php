@@ -15,12 +15,15 @@ class Leilao
     private $encerrado;
     private $lances;
 
-    public function __construct(string $descricao,float $valorInicial)
+    public function __construct(string $nome = "",float $valorInicial = 0,Usuario $dono = null,bool $encerrado = false,bool $usado = false)
     {
-        $this->descricao = $descricao;
+        $this->nome = $nome;
         $this->dataAbertura = new DateTime();
-        $this->encerrado = false;
+        $this->dono = $dono;
+        $this->encerrado = $encerrado;
         $this->valorInicial = $valorInicial;
+        $this->usado = $usado;
+        $this->lances = array();
     }
 
     public function getDescricao(): string

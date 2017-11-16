@@ -46,6 +46,8 @@ class UsuarioDao {
 	    $stmt->bindParam("email",$email);
 	    
 	    $stmt->execute();
+	    
+	    $usuario->setId($this->con->lastInsertId());
 	}
 	
 	public function atualizar(Usuario $usuario) {
