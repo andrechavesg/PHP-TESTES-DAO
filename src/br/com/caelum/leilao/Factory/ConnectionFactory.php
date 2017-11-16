@@ -6,7 +6,7 @@ use PDO;
 class ConnectionFactory
 {
     private static $host = "localhost";
-    private static $root = "andre";
+    private static $root = "root";
     private static $root_password = "";
     private static $db = "leilao";
     
