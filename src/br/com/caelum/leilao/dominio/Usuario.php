@@ -26,22 +26,22 @@ class Usuario
         return $this->id;
     }
     
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
 
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
     }
 
-    public function setNome($nome)
+    public function setNome(string $nome)
     {
         $this->nome = $nome;
     }
 
-    public function setEmail($email)
+    public function setEmail(string $email)
     {
         $this->email = $email;
     }

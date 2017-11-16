@@ -1,6 +1,8 @@
 <?php
 namespace src\br\com\caelum\leilao\dominio;
 
+use DateTime;
+
 class Lance
 {
     private $id;
@@ -15,58 +17,53 @@ class Lance
         $this->valor = $valor;
     }
     
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
-
-    public function getUsuario()
+    
+    public function getUsuario(): Usuario
     {
         return $this->usuario;
     }
-
-    public function getData()
+    
+    public function getData(): DateTime
     {
         return $this->data;
     }
-
-    public function getValor()
+    
+    public function getValor(): float
     {
         return $this->valor;
     }
-
-    public function getLeilao()
+    
+    public function getLeilao(): Leilao
     {
         return $this->leilao;
     }
-
-    public function setId($id)
+    
+    public function setId(int $id)
     {
         $this->id = $id;
     }
-
-    public function setUsuario($usuario)
+    
+    public function setUsuario(Usuario $usuario)
     {
         $this->usuario = $usuario;
     }
-
-    public function setData($data)
+    
+    public function setData(DateTime $data)
     {
         $this->data = $data;
     }
-
-    public function setValor($valor)
+    
+    public function setValor(float $valor)
     {
         $this->valor = $valor;
     }
-
-    public function setLeilao($leilao)
+    
+    public function setLeilao(Leilao $leilao)
     {
         $this->leilao = $leilao;
     }
-
-    
-    
 }
-
-

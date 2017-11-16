@@ -40,7 +40,7 @@ class Leilao
         }
     }
     
-    public function isEncerrado()
+    public function isEncerrado(): bool
     {
         return $this->encerrado;
     }
@@ -72,57 +72,57 @@ class Leilao
         return $this->ultimoLanceDado()->getUsuario() != $usuario && $this->qtdDelancesDo($usuario) < 5;
     }
     
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
 
-    public function getValorInicial()
+    public function getValorInicial(): float
     {
         return $this->valorInicial;
     }
 
-    public function getDono()
+    public function getDono(): Usuario
     {
         return $this->dono;
     }
 
-    public function getDataAbertura() : DateTime
+    public function getDataAbertura(): DateTime
     {
         return $this->dataAbertura;
     }
 
-    public function getUsado()
+    public function getUsado(): bool
     {
         return $this->usado;
     }
 
-    public function getEncerrado()
+    public function getEncerrado(): bool
     {
         return $this->encerrado;
     }
 
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
     }
 
-    public function setNome($nome)
+    public function setNome(string $nome)
     {
         $this->nome = $nome;
     }
 
-    public function setValorInicial($valorInicial)
+    public function setValorInicial(float $valorInicial)
     {
         $this->valorInicial = $valorInicial;
     }
 
-    public function setDono($dono)
+    public function setDono(Usuario $dono)
     {
         $this->dono = $dono;
     }
@@ -132,18 +132,19 @@ class Leilao
         $this->dataAbertura = $dataAbertura;
     }
 
-    public function setUsado($usado)
+    public function setUsado(bool $usado)
     {
         $this->usado = $usado;
     }
 
-    public function setEncerrado($encerrado)
+    public function setEncerrado(bool $encerrado)
     {
         $this->encerrado = $encerrado;
     }
 
-    public function setLances($lances)
+    public function setLances(array $lances)
     {
         $this->lances = $lances;
     }
 }
+	

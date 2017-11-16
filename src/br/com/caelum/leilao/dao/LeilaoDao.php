@@ -4,9 +4,9 @@ namespace src\br\com\caelum\leilao\dao;
 use \PDO;
 use \DateTime;
 use \DateInterval;
-use br\com\caelum\leilao\dominio\Leilao;
-use br\com\caelum\leilao\dominio\Lance;
-use br\com\caelum\leilao\dominio\Usuario;
+use src\br\com\caelum\leilao\dominio\Leilao;
+use src\br\com\caelum\leilao\dominio\Lance;
+use src\br\com\caelum\leilao\dominio\Usuario;
 
 class LeilaoDao {
 
