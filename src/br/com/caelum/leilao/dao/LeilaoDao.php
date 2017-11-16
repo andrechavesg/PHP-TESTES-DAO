@@ -62,14 +62,15 @@ class LeilaoDao {
 	    $stmt->execute();
 	}
 	
-	public function porId(int $id) : Leilao
+	public function porId(int $id)
 	{
 		$stmt = $this->con->prepare("SELECT * FROM Leilao WHERE id = :id");
 		$stmt->bindParam("id",$id);
 	    $stmt->execute();
 		
-		$leilao = $stmt->fetchOject(Leilao::class);
-		
+	    $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,Usuario::class);
+	    $leilao = $stmt->fetch();
+	    
 	    return $leilao;
 	}
 	
@@ -171,7 +172,7 @@ class LeilaoDao {
 	    $stmt->execute();
 	}
 	
-	public function deleta(Leilao $leilao) {
+	public function deletar(Leilao $leilao) {
 	    $id = $leilao->getId();
 	    
 	    $stmt = $this->con->prepare("DELETE FROM Leilao WHERE id = :id");
@@ -181,11 +182,7 @@ class LeilaoDao {
 	}
 	
 	public function deletaEncerrados() {
-	    $encerrado = $leilao->getEncerrado();
-	    
-	    $stmt = $this->con->prepare("DELETE FROM Leilao WHERE encerrado = :encerrado");
-	    $stmt->bindParam("encerrado",$encerrado);
-	    
+	    $stmt = $this->con->prepare("DELETE FROM Leilao WHERE encerrado = true");
 	    $stmt->execute();
 	}
 	

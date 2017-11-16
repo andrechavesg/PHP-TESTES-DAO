@@ -55,10 +55,11 @@ class UsuarioDao {
 	    $email = $usuario->getEmail();
 	    $nome = $usuario->getNome();
 	    
-	    $stmt = $this->con->prepare("update Usuario set nome = ':nome',email = ':email' where id = :id");
+	    $stmt = $this->con->prepare("update Usuario set nome = :nome,email = :email where id = :id");
 	    $stmt->bindParam("nome",$nome);
 	    $stmt->bindParam("email",$email);
 	    $stmt->bindParam("id",$id);
+	    
 	    $stmt->execute();
 	}
 	
@@ -66,6 +67,7 @@ class UsuarioDao {
 	    $id = $usuario->getId();
 	    $stmt = $this->con->prepare("delete from Usuario where id = :id");
 	    $stmt->bindParam("id",$id);
+	    
 	    $stmt->execute();
 	}
 }
