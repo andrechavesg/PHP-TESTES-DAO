@@ -7,7 +7,7 @@ class ConnectionFactory
 {
     private static $host = "localhost";
     private static $root = "root";
-    private static $root_password = "";
+    private static $root_password = "caelum";
     private static $db = "leilao";
     
     public static function getConnectionWithoutDb(){
