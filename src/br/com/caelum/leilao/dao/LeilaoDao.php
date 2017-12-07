@@ -36,13 +36,16 @@ class LeilaoDao {
         $stmt->bindParam("usado",$usado,PDO::PARAM_BOOL);
         $stmt->bindParam("encerrado",$encerrado,PDO::PARAM_BOOL);
         
-        $stmt->execute();
+        $deuCerto = $stmt->execute();
         
         $leilao->setId($this->con->lastInsertId());
         
         foreach ($leilao->getLances() as $lance){
+        	$lance->setLeilao($leilao);
             $this->salvarLance($lance);
         }
+
+        return $deuCerto;
     }
 	
 	private function salvarLance(Lance $lance)
